@@ -30,7 +30,7 @@ class DashboardController extends Controller
             ->get();
 
         $matriksPenjumlahanPrioritas = DB::table('matriks_penjumlahan_prioritas_utama')->get();
-        $IR = DB::table('index_random_consistency')->where('ukuran_matriks', $kriteria->count())->first()->nilai;
+        $IR = DB::table('index_random_consistency')->where('ukuran_matriks', @$kriteria->count())->first()->nilai;
 
         $hasilSolusi = DB::table('hasil_solusi_ahp as hsa')
             ->join('alternatif as a', 'a.id', '=', 'hsa.alternatif_id')
