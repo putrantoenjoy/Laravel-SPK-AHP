@@ -47,7 +47,7 @@ Route::group([
 });
 
 Route::group([
-    'middleware' => ['auth', 'verified'],
+    'middleware' => ['auth'],
     'prefix' => 'dashboard',
 
 ], function() {

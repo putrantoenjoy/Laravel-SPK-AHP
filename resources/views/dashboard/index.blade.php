@@ -110,7 +110,7 @@
                 </h4>
                 <div class="flex flex-col justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
                     <!-- Chart legend -->
-                    @php
+                    {{-- @php
                         foreach ($kriteria as $item) {
                             $jumlah = $matriksPenjumlahan->where('kriteria_id', $item->id)->sum('nilai');
                             $prioritas = $matriksNilai->where('kriteria_id', $item->id)->sum('nilai') / $matriksNilai->unique('kriteria_id')->count();
@@ -118,7 +118,7 @@
                         }
                         $hasilRasio = 0;
                         $jmlKriteria = $kriteria->count();
-                    @endphp
+                    @endphp --}}
                     {{-- Cara Cek CR 1 --}}
                     <div class="overflow-x-auto p-3 mt-3">
                         <table id="tabel_data_matriks_penjumlahan" class="nowrap w-full text-sm text-left text-gray-500 dark:text-gray-400 stripe hover" style="width:100%; padding-top: 1em; padding-bottom: 1em;">
@@ -130,11 +130,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php
+                                {{-- @php
                                     $lamdaMaks1 = $hasilRasio / $jmlKriteria;
                                     $CI1 = ($lamdaMaks1 - $jmlKriteria) / $jmlKriteria;
-                                @endphp
-                                <tr class="border-b dark:border-gray-700">
+                                @endphp --}}
+                                {{-- <tr class="border-b dark:border-gray-700">
                                     <td class="px-4 py-3 text-gray-700 dark:text-gray-400 font-semibold">Jumlah Kriteria <span class="font-normal">(n)</span></td>
                                     <td class="px-4 py-3 text-gray-700 dark:text-gray-400 font-semibold">
                                         {{ $jmlKriteria }}
@@ -173,7 +173,7 @@
                                             <i class="ri-close-circle-fill ml-1 text-lg text-error"></i>
                                         @endif
                                     </td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -195,11 +195,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php
+                                {{-- @php
                                     $lamdaMaks2 = $matriksPenjumlahanPrioritas->sum('prioritas') / $jmlKriteria;
                                     $CI2 = ($lamdaMaks2 - $jmlKriteria) / ($jmlKriteria-1);
-                                @endphp
-                                <tr class="border-b dark:border-gray-700">
+                                @endphp --}}
+                                {{-- <tr class="border-b dark:border-gray-700">
                                     <td class="px-4 py-3 text-gray-700 dark:text-gray-400 font-semibold">Jumlah Kriteria <span class="font-normal">(n)</span></td>
                                     <td class="px-4 py-3 text-gray-700 dark:text-gray-400 font-semibold">
                                         {{ $jmlKriteria }}
@@ -238,7 +238,7 @@
                                             <i class="ri-close-circle-fill ml-1 text-lg text-error"></i>
                                         @endif
                                     </td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                             <tfoot>
                                 <tr>
